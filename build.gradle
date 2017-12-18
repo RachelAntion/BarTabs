@@ -1,0 +1,16 @@
+buildscript {
+    apply from: "${androidBuild}/deps.gradle"
+    repositories {
+        mavenLocal()
+        if (project.properties.containsKey("localArtifactoryUrl")) {
+            maven { url localArtifactoryUrl }
+        }
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath androidPlugin
+        classpath mavenPlugin
+    }
+}

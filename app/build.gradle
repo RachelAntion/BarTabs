@@ -1,0 +1,19 @@
+group = 'com.clover'
+version = '23-SNAPSHOT'
+
+apply from: file("${androidBuild}/lib.gradle")
+
+android {
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion 17
+        multiDexEnabled true
+    }
+}
+
+dependencies {
+    compile 'com.clover:common-orders:218-SNAPSHOT'
+    compile 'com.clover:common-taskqueue:218-SNAPSHOT@aar'
+    compile 'com.clover.sdk:clover-android-sdk:191-SNAPSHOT'
+    compile "com.android.support:multidex:$MULTIDEX_SUPPORT_VERSION"
+}
